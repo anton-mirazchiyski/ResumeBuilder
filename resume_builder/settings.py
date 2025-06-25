@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'resume_builder.resumes',
+
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [
