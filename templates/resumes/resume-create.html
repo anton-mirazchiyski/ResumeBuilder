@@ -1,14 +1,53 @@
-{% load static %}
+{% extends "common/base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create your resume</title>
-    <link rel="stylesheet" href="{% static 'stylesheets/pages/create-resume.css' %}">
-</head>
-<body>
-    <h1>Heading</h1>
-</body>
-</html>
+{% block title %} Create your resume {% endblock title %}
+
+{% block page_content %}
+    <h1 class="general-resume-form-heading">Create a General Resume</h1>
+
+    <div class="general-resume-form-container">
+        <form action="{% url "create resume" %}" method="post">
+            {% csrf_token %}
+            {% comment %} {% for field in form  %}
+                <div class="general-resume-form-field">
+                    <div class="general-resume-form-label">
+                        {{field.label_tag}}</div>
+                    {{field}}
+                </div>
+            {% endfor %} {% endcomment %}
+            <div class="general-resume-form-contact-info">
+            <div class="general-resume-form-field">
+                <div class="general-resume-form-label">
+                    {{form.person_name.label_tag}}
+                </div>
+                {{form.person_name}}
+            </div>
+            <div class="general-resume-form-field">
+                <div class="general-resume-form-label">
+                    {{form.email.label_tag}}
+                </div>
+                {{form.email}}
+            </div>
+            <div class="general-resume-form-field">
+                <div class="general-resume-form-label">
+                    {{form.phone_number.label_tag}}
+                </div>
+                {{form.phone_number}}
+            </div>
+            <div class="general-resume-form-field">
+                <div class="general-resume-form-label">
+                    {{form.linkedin_profile.label_tag}}
+                </div>
+                {{form.linkedin_profile}}
+            </div>
+            </div>
+            
+            <div class="general-resume-summary">
+                <div class="general-resume-form-label">
+                    {{form.summary.label_tag}}
+                </div>
+                {{form.summary}}
+            </div>
+        </form>
+    </div>
+{% endblock page_content %}
