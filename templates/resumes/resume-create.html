@@ -6,47 +6,65 @@
     <h1 class="general-resume-form-heading">Create a General Resume</h1>
 
     <div class="general-resume-form-container">
+        <div class="general-resume-remove-options">
+            <button>Remove Summary</button>
+            <button>Remove Work Experience</button>
+            <button>Remove Skills</button>
+        </div>
         <form action="{% url "create resume" %}" method="post">
             {% csrf_token %}
-            {% comment %} {% for field in form  %}
-                <div class="general-resume-form-field">
-                    <div class="general-resume-form-label">
-                        {{field.label_tag}}</div>
-                    {{field}}
-                </div>
-            {% endfor %} {% endcomment %}
             <div class="general-resume-form-contact-info">
             <div class="general-resume-form-field">
-                <div class="general-resume-form-label">
+                <div class="form-label">
                     {{form.person_name.label_tag}}
                 </div>
                 {{form.person_name}}
             </div>
             <div class="general-resume-form-field">
-                <div class="general-resume-form-label">
+                <div class="form-label">
                     {{form.email.label_tag}}
                 </div>
                 {{form.email}}
             </div>
             <div class="general-resume-form-field">
-                <div class="general-resume-form-label">
+                <div class="form-label">
                     {{form.phone_number.label_tag}}
                 </div>
                 {{form.phone_number}}
             </div>
             <div class="general-resume-form-field">
-                <div class="general-resume-form-label">
+                <div class="form-label">
                     {{form.linkedin_profile.label_tag}}
                 </div>
                 {{form.linkedin_profile}}
             </div>
             </div>
             
-            <div class="general-resume-summary">
-                <div class="general-resume-form-label">
+            <div class="general-resume-form-sections">
+            <section class="general-resume-summary">
+                <div class="form-label">
                     {{form.summary.label_tag}}
                 </div>
                 {{form.summary}}
+            </section>
+            <section class="general-resume-education">
+                <div class="form-label">
+                    {{form.education.label_tag}}
+                </div>
+                {{form.education}}
+            </section>
+            <section class="general-resume-work-experience">
+                <div class="form-label">
+                    {{form.work_experience.label_tag}}
+                </div>
+                {{form.work_experience}}
+            </section>
+            <section class="general-resume-skills">
+                <div class="form-label">
+                    {{form.skills.label_tag}}
+                </div>
+                {{form.skills}}
+            </section>
             </div>
         </form>
     </div>
