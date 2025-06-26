@@ -8,12 +8,15 @@ class GeneralResumeForm(forms.ModelForm):
         model = GeneralResume
         exclude = ['resume_name']
 
-        # labels = {
-        #     'person_name': 'Name',
-        # }
+        labels = {
+            'person_name': 'Name',
+        }
 
         widgets = {
-
+            'summary': forms.Textarea(attrs={'rows': 6}),
+            'education': forms.Textarea(attrs={'rows': 8}),
+            'work_experience': forms.Textarea(attrs={'rows': 8}),
+            'skills': forms.Textarea(attrs={'rows': 5})
         }
 
     def __init__(self, *args, **kwargs):
