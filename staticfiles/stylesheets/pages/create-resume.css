@@ -30,7 +30,8 @@
     font-weight: 600;
     border-radius: 5px;
     color: rgb(22, 21, 21);
-    border: 1px solid black;
+    border: 2px solid gray;
+    background-color: rgb(246, 246, 207);
 }
 
 .form-label {
@@ -44,7 +45,7 @@
     flex-wrap: wrap;
     max-width: 50rem;
     gap: 2.5rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     background-color: rgb(135, 143, 227);
     padding: 4rem 1rem;
@@ -57,7 +58,10 @@
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
+    background-color: rgb(246, 246, 207);
+    padding: 2rem 0;
+    border-radius: 5px;
 }
 
 .general-resume-form-input {
@@ -82,7 +86,7 @@
 
 .name {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .contact-info {

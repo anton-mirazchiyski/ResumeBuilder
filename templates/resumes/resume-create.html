@@ -1,84 +1,70 @@
 {% extends "common/base.html" %}
+{% load static %}
 
-{% block title %} Create your resume {% endblock title %}
+{% block title %}
+    Create your resume
+{% endblock title %}
 
 {% block page_content %}
     <h1 class="general-resume-form-heading">Create a General Resume</h1>
-
     <div class="general-resume-container">
-    <div class="general-resume-form-container">
-        <div class="general-resume-remove-options">
-            <button>Remove Summary</button>
-            <button>Remove Work Experience</button>
-            <button>Remove Skills</button>
+        <div class="general-resume-form-container">
+            <div class="general-resume-remove-options">
+                <button>Remove Summary</button>
+                <button>Remove Work Experience</button>
+                <button>Remove Skills</button>
+            </div>
+            <form action="{% url "create resume" %}" method="post">
+                {% csrf_token %}
+                <div class="general-resume-form-contact-info">
+                    <div class="general-resume-form-field">
+                        <div class="form-label">{{ form.person_name.label_tag }}</div>
+                        {{ form.person_name }}
+                    </div>
+                    <div class="general-resume-form-field">
+                        <div class="form-label">{{ form.email.label_tag }}</div>
+                        {{ form.email }}
+                    </div>
+                    <div class="general-resume-form-field">
+                        <div class="form-label">{{ form.phone_number.label_tag }}</div>
+                        {{ form.phone_number }}
+                    </div>
+                    <div class="general-resume-form-field">
+                        <div class="form-label">{{ form.linkedin_profile.label_tag }}</div>
+                        {{ form.linkedin_profile }}
+                    </div>
+                </div>
+                <div class="general-resume-form-sections">
+                    <section class="general-resume-summary">
+                        <div class="form-label">{{ form.summary.label_tag }}</div>
+                        {{ form.summary }}
+                    </section>
+                    <section class="general-resume-education">
+                        <div class="form-label">{{ form.education.label_tag }}</div>
+                        {{ form.education }}
+                    </section>
+                    <section class="general-resume-work-experience">
+                        <div class="form-label">{{ form.work_experience.label_tag }}</div>
+                        {{ form.work_experience }}
+                    </section>
+                    <section class="general-resume-skills">
+                        <div class="form-label">{{ form.skills.label_tag }}</div>
+                        {{ form.skills }}
+                    </section>
+                </div>
+            </form>
         </div>
-        <form action="{% url "create resume" %}" method="post">
-            {% csrf_token %}
-            <div class="general-resume-form-contact-info">
-            <div class="general-resume-form-field">
-                <div class="form-label">
-                    {{form.person_name.label_tag}}
+        <div class="live-preview-container">
+            <h2>Preview document live</h2>
+            <section>
+                <p class="name"></p>
+                <div class="contact-info">
+                    <p>john.doe@gmail.com</p>
+                    <p>Phone: 088583453</p>
+                    <a href="https://uk.linkedin.com/john-doe">Linkedin</a>
                 </div>
-                {{form.person_name}}
-            </div>
-            <div class="general-resume-form-field">
-                <div class="form-label">
-                    {{form.email.label_tag}}
-                </div>
-                {{form.email}}
-            </div>
-            <div class="general-resume-form-field">
-                <div class="form-label">
-                    {{form.phone_number.label_tag}}
-                </div>
-                {{form.phone_number}}
-            </div>
-            <div class="general-resume-form-field">
-                <div class="form-label">
-                    {{form.linkedin_profile.label_tag}}
-                </div>
-                {{form.linkedin_profile}}
-            </div>
-            </div>
-            
-            <div class="general-resume-form-sections">
-            <section class="general-resume-summary">
-                <div class="form-label">
-                    {{form.summary.label_tag}}
-                </div>
-                {{form.summary}}
             </section>
-            <section class="general-resume-education">
-                <div class="form-label">
-                    {{form.education.label_tag}}
-                </div>
-                {{form.education}}
-            </section>
-            <section class="general-resume-work-experience">
-                <div class="form-label">
-                    {{form.work_experience.label_tag}}
-                </div>
-                {{form.work_experience}}
-            </section>
-            <section class="general-resume-skills">
-                <div class="form-label">
-                    {{form.skills.label_tag}}
-                </div>
-                {{form.skills}}
-            </section>
-            </div>
-        </form>
+        </div>
     </div>
-    <div class="live-preview-container">
-        <h2>Preview document live</h2>
-        <section>
-            <p class="name">John Doe</p>
-            <div class="contact-info">
-                <p>john.doe@gmail.com</p>
-                <p>Phone: 088583453</p>
-                <a href="https://uk.linkedin.com/john-doe">Linkedin</a>
-            </div>
-        </section>
-    </div>
-    </div>
+    <script src="{% static "scripts/create-general-resume.js" %}"></script>
 {% endblock page_content %}
