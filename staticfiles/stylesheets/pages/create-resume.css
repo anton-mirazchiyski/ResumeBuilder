@@ -2,13 +2,13 @@
     text-align: end;
     margin-top: 2rem;
     margin-right: 10rem;
-    text-decoration: underline;
+    font-size: 2.3rem;
 }
 
 .general-resume-container {
     display: flex;
     margin-top: 3rem;
-    gap: 7rem;
+    gap: 6rem;
 }
 
 .general-resume-form-container {
@@ -45,12 +45,12 @@
     flex-wrap: wrap;
     max-width: 50rem;
     gap: 2.5rem;
-    /* border: 1px solid black; */
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: rgb(135, 143, 227);
     padding: 4rem 1rem;
     margin-top: 2.3rem;
     justify-content: center;
+    box-shadow: 2px 2px 5px 5px rgb(246, 246, 207);
 }
 
 .general-resume-form-sections {
@@ -61,7 +61,7 @@
     margin: 2rem 0;
     background-color: rgb(246, 246, 207);
     padding: 2rem 0;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .general-resume-form-input {
@@ -74,19 +74,20 @@
 }
 
 .live-preview-container > section {
-    border: 3px solid black;
+    border: 3px solid #000;
     border-radius: 5px;
     margin-top: 2rem;
-    min-width: 30vw;
-    max-width: 30vw;
-    min-height: 70vh;
+    min-width: 35vw;
+    max-width: 35vw;
+    min-height: 50%;
     padding: 1.5rem;
     font-weight: 600;
+    box-shadow: 2px 2px 4px 3px rgb(135, 143, 227);
 }
 
 .name {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .contact-info {
@@ -96,4 +97,10 @@
     max-width: 30vw;
     flex-wrap: wrap;
     padding: 1rem;
+}
+
+@media (max-width:640px) {
+    .general-resume-form-input {
+        max-width: 50vw;
+    }
 }

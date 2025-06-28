@@ -23,7 +23,7 @@ class GeneralResumeForm(forms.ModelForm):
         super(GeneralResumeForm, self).__init__(*args, **kwargs)
         for _, field in self.fields.items():
             field.widget.attrs['class'] = 'general-resume-form-input'
-            field.widget.attrs['size'] = '35'
+            field.widget.attrs['size'] = '28'
         
         self.fields['person_name'].widget.attrs['class'] += ' ' + 'name-input'
         self.fields['skills'].widget.attrs['class'] += ' ' + 'skills-section-input'
