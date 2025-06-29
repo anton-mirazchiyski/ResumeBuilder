@@ -26,4 +26,7 @@ class GeneralResumeForm(forms.ModelForm):
             field.widget.attrs['size'] = '28'
         
         self.fields['person_name'].widget.attrs['class'] += ' ' + 'name-input'
+        self.fields['email'].widget.attrs['class'] += ' ' + 'email-input'
+        self.fields['phone_number'].widget.attrs['class'] += ' ' + 'phone-number-input'
+        self.fields['linkedin_profile'].widget.attrs['class'] += ' ' + 'linkedin-profile-input'
         self.fields['skills'].widget.attrs['class'] += ' ' + 'skills-section-input'

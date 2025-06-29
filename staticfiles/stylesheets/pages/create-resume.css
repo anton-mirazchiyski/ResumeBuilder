@@ -46,7 +46,7 @@
     max-width: 50rem;
     gap: 2.5rem;
     border-radius: 7px;
-    background-color: rgb(135, 143, 227);
+    background-color: rgb(160, 166, 235);
     padding: 4rem 1rem;
     margin-top: 2.3rem;
     justify-content: center;
@@ -83,6 +83,7 @@
     padding: 1.5rem;
     font-weight: 600;
     box-shadow: 2px 2px 4px 3px rgb(135, 143, 227);
+    background-color: #f9f9f9;
 }
 
 .name {
@@ -96,7 +97,14 @@
     gap: 2rem;
     max-width: 30vw;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 2rem;
+    font-size: 1.05rem;
+    border-radius: 6px;
+    background-color: rgb(152, 159, 222, 0.9);
+}
+
+.linkedin-profile-link {
+    text-decoration: none;
 }
 
 @media (max-width:640px) {
