@@ -93,6 +93,7 @@
 
 .contact-info {
     margin-top: 1.5rem;
+    margin-bottom: 3rem;
     display: flex;
     gap: 2rem;
     max-width: 30vw;
@@ -101,6 +102,20 @@
     font-size: 1.05rem;
     border-radius: 6px;
     background-color: rgb(152, 159, 222, 0.9);
+}
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.summary-section > h3 {
+    text-decoration: underline;
+    text-decoration-color: rgb(152, 159, 222, 0.9);
+    background-color: rgb(240, 240, 183);
+    max-width: 23%;
+    padding: 0.2rem 0.4rem;
 }
 
 .linkedin-profile-link {
