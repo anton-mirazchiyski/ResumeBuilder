@@ -1,4 +1,5 @@
 from django import forms
+from phonenumber_field.widgets import RegionalPhoneNumberWidget
 
 from resume_builder.resumes.models import GeneralResume
 
@@ -13,6 +14,11 @@ class GeneralResumeForm(forms.ModelForm):
         }
 
         widgets = {
+            'person_name': forms.TextInput(attrs={'placeholder': 'e.g. Ivan Ivanov',}),
+            'email': forms.EmailInput(attrs={'placeholder': 'e.g. ivan.ivanov@gmail.com',}),
+            'phone_number': RegionalPhoneNumberWidget(attrs={'placeholder': 'your phone number',}),
+            'linkedin_profile': forms.URLInput(attrs={'placeholder': 'your linkedin profile link',}),
+            
             'summary': forms.Textarea(attrs={'rows': 6}),
             'education': forms.Textarea(attrs={'rows': 8}),
             'work_experience': forms.Textarea(attrs={'rows': 8}),

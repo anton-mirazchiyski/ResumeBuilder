@@ -122,6 +122,11 @@
     text-decoration: none;
 }
 
+.general-resume-form-input::placeholder {
+    color: #2f2e2e;
+    font-weight: 600;
+}
+
 @media (max-width:640px) {
     .general-resume-form-input {
         max-width: 50vw;
