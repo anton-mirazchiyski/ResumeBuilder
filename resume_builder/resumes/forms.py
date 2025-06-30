@@ -1,10 +1,11 @@
 from django import forms
 from phonenumber_field.widgets import RegionalPhoneNumberWidget
 
+from resume_builder.core.mixins.form_mixins import FormFieldAttributesMixin
 from resume_builder.resumes.models import GeneralResume
 
 
-class GeneralResumeForm(forms.ModelForm):
+class GeneralResumeForm(FormFieldAttributesMixin, forms.ModelForm):
     class Meta:
         model = GeneralResume
         exclude = ['resume_name']
@@ -14,10 +15,10 @@ class GeneralResumeForm(forms.ModelForm):
         }
 
         widgets = {
-            'person_name': forms.TextInput(attrs={'placeholder': 'e.g. Ivan Ivanov',}),
-            'email': forms.EmailInput(attrs={'placeholder': 'e.g. ivan.ivanov@gmail.com',}),
-            'phone_number': RegionalPhoneNumberWidget(attrs={'placeholder': 'your phone number',}),
-            'linkedin_profile': forms.URLInput(attrs={'placeholder': 'your linkedin profile link',}),
+            'person_name': forms.TextInput(attrs={}),
+            'email': forms.EmailInput(attrs={}),
+            'phone_number': RegionalPhoneNumberWidget(attrs={}),
+            'linkedin_profile': forms.URLInput(attrs={}),
             
             'summary': forms.Textarea(attrs={'rows': 6}),
             'education': forms.Textarea(attrs={'rows': 8}),
@@ -27,13 +28,19 @@ class GeneralResumeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(GeneralResumeForm, self).__init__(*args, **kwargs)
-        for _, field in self.fields.items():
-            field.widget.attrs['class'] = 'general-resume-form-input'
-            field.widget.attrs['size'] = '28'
-        
-        self.fields['person_name'].widget.attrs['class'] += ' ' + 'name-input'
-        self.fields['email'].widget.attrs['class'] += ' ' + 'email-input'
-        self.fields['phone_number'].widget.attrs['class'] += ' ' + 'phone-number-input'
-        self.fields['linkedin_profile'].widget.attrs['class'] += ' ' + 'linkedin-profile-input'
-        self.fields['summary'].widget.attrs['class'] += ' ' + 'summary-input'
-        self.fields['skills'].widget.attrs['class'] += ' ' + 'skills-section-input'
+
+        self.set_attributes_to_all_fields(self.fields.values())
+
+        specific_class_names = {
+            'person_name': ' name-input', 'email': ' email-input', 'phone_number': ' phone-number-input', 'linkedin_profile': ' linkedin-profile-input',
+            'summary': ' summary-input', 'skills': ' skills-input',
+        }
+        self.set_specific_class_names(self.fields.items(), specific_class_names)
+
+        placeholders = {
+            'person_name': 'e.g. Ivan Ivanov',
+            'email': 'e.g. ivan.ivanov@gmail.com',
+            'phone_number': 'your phone number',
+            'linkedin_profile': 'your linkedin profile link',
+        }
+        self.set_placeholders(self.fields.items(), placeholders)
