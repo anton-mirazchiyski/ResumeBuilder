@@ -30,13 +30,13 @@ class GeneralResumeForm(FormFieldAttributesMixin, forms.ModelForm):
         super(GeneralResumeForm, self).__init__(*args, **kwargs)
 
         self.set_attributes_to_all_fields(self.fields.values())
-        
+
         larger_fields = [field for field in self.fields.values() if isinstance(field.widget, forms.Textarea)]
         self.set_attributes_to_larger_fields(larger_fields)
 
         specific_class_names = {
             'person_name': ' name-input', 'email': ' email-input', 'phone_number': ' phone-number-input', 'linkedin_profile': ' linkedin-profile-input',
-            'summary': ' summary-input', 'skills': ' skills-input',
+            'summary': ' summary-input', 'education': ' education-input', 'skills': ' skills-input',
         }
         self.set_specific_class_names(self.fields.items(), specific_class_names)
 
@@ -45,5 +45,7 @@ class GeneralResumeForm(FormFieldAttributesMixin, forms.ModelForm):
             'email': 'e.g. ivan.ivanov@gmail.com',
             'phone_number': 'your phone number',
             'linkedin_profile': 'your linkedin profile link',
+            'summary': 'A short summary or objective',
+            'education': 'List your education in the manner:\nDegree Name\nInstitution\nGraduation Date'
         }
         self.set_placeholders(self.fields.items(), placeholders)

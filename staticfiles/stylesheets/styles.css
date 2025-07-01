@@ -2,4 +2,7 @@
 
 @import url(main.css);
 
-@import url(pages/create-resume.css);
+@import url(elements/forms.css);
+
+@import url(pages/create-general-resume.css);
+@import url(pages/live-preview-general-resume.css);

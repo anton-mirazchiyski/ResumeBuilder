@@ -1,0 +1,54 @@
+.live-preview-container > section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 3px solid #000;
+    border-radius: 5px;
+    margin-top: 2rem;
+    min-width: 35vw;
+    max-width: 35vw;
+    min-height: 50%;
+    padding: 1.5rem;
+    font-weight: 600;
+    box-shadow: 2px 2px 4px 3px #e7e3fa;
+    background-color: #f9f9f9;
+}
+
+.name {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.contact-info {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    max-width: 30vw;
+    flex-wrap: wrap;
+    padding: 2rem;
+    font-size: 1.05rem;
+    border-radius: 6px;
+    background-color: rgb(152, 159, 222, 0.9);
+}
+
+.summary-section, .education-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.summary-section > h3, .education-section > h3 {
+    text-decoration: underline;
+    text-decoration-color: rgb(152, 159, 222, 0.9);
+    background-color: rgb(240, 240, 183);
+    max-width: 23%;
+    padding: 0.2rem 0.4rem;
+}
+
+.education-section p {
+    line-height: 1.7;
+}
+
+.linkedin-profile-link {
+    text-decoration: none;
+}

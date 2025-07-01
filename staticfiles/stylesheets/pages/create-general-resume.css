@@ -1,0 +1,65 @@
+.general-resume-form-heading {
+    text-align: end;
+    margin-top: 2rem;
+    margin-right: 10rem;
+    font-size: 2.3rem;
+}
+
+.general-resume-container {
+    display: flex;
+    margin-top: 3rem;
+    gap: 6rem;
+}
+
+.general-resume-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 3rem;
+    gap: 1rem;
+}
+
+.general-resume-remove-options {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.general-resume-remove-options > button {
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    color: rgb(22, 21, 21);
+    border: 2px solid gray;
+    background-color: rgb(246, 246, 207);
+}
+
+.general-resume-form-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50rem;
+    gap: 2.5rem;
+    border-radius: 7px;
+    background-color: #e7e3fa; 
+    padding: 4rem 1rem;
+    margin-top: 2.3rem;
+    justify-content: center;
+    box-shadow: 2px 2px 5px 5px rgb(246, 246, 207);
+}
+
+.general-resume-form-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 2rem 0;
+    background-color: rgb(246, 246, 207);
+    padding: 2rem 0;
+    border-radius: 7px;
+}
+
+@media (max-width:640px) {
+    .general-resume-form-input {
+        max-width: 50vw;
+    }
+}

@@ -1,0 +1,25 @@
+.form-label {
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.general-resume-form-input {
+    text-indent: 10px each-line;
+    border: 2px solid gray;
+    line-height: 2.2rem;
+    border-radius: 6px;
+    background-color: rgb(242, 242, 244);
+    outline: none;
+}
+
+.general-resume-larger-form-input {
+    resize: none;
+    border-color: #000;
+    box-shadow: 1px 1px 2px 2px rgb(139, 144, 207);
+}
+
+.general-resume-form-input::placeholder {
+    color: #2f2e2e;
+    font-weight: 600;
+}
