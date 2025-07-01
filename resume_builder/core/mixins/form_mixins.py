@@ -1,6 +1,7 @@
 class FormFieldAttributesMixin:
     COMMON_FORM_FIELD_CLASS = 'general-resume-form-input'
     COMMON_FORM_FIELD_SIZE = '28'
+    COMMON_FORM_LARGE_FIELD_CLASS = 'general-resume-larger-form-input' # for textareas
 
     def set_attributes_to_all_fields(self, fields: list):
         for field in fields:
@@ -17,3 +18,7 @@ class FormFieldAttributesMixin:
         for field_name, field in fields:
             if field_name in placeholders:
                 field.widget.attrs['placeholder'] = placeholders[field_name]
+
+    def set_attributes_to_larger_fields(self, fields: list):
+        for field in fields:
+            field.widget.attrs['class'] += ' ' + self.COMMON_FORM_LARGE_FIELD_CLASS

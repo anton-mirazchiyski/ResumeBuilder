@@ -30,6 +30,9 @@ class GeneralResumeForm(FormFieldAttributesMixin, forms.ModelForm):
         super(GeneralResumeForm, self).__init__(*args, **kwargs)
 
         self.set_attributes_to_all_fields(self.fields.values())
+        
+        larger_fields = [field for field in self.fields.values() if isinstance(field.widget, forms.Textarea)]
+        self.set_attributes_to_larger_fields(larger_fields)
 
         specific_class_names = {
             'person_name': ' name-input', 'email': ' email-input', 'phone_number': ' phone-number-input', 'linkedin_profile': ' linkedin-profile-input',
