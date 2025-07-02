@@ -58,6 +58,27 @@
     border-radius: 7px;
 }
 
+.general-resume-creation-btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.general-resume-creation-btn {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    cursor: pointer;
+    padding: 0.9rem 0.6rem;
+    border: 3px solid #000;
+    border-radius: 9px;
+    background-color: #c4bdeb;
+    font-weight: 600;
+}
+
+.general-resume-creation-btn:hover {
+    background-color: rgb(152, 159, 222, 0.9);
+    box-shadow: 1px 1px 3px 3px #000;
+}
+
 @media (max-width:640px) {
     .general-resume-form-input {
         max-width: 50vw;
