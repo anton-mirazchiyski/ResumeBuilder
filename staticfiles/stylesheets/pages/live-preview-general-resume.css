@@ -29,15 +29,17 @@
     font-size: 1.05rem;
     border-radius: 6px;
     background-color: rgb(152, 159, 222, 0.9);
+    overflow: hidden;
 }
 
-.summary-section, .education-section {
+.summary-section, .education-section, .skills-section {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-.summary-section > h3, .education-section > h3 {
+.summary-section > h3, .education-section > h3,
+.skills-section > h3 {
     text-decoration: underline;
     text-decoration-color: rgb(152, 159, 222, 0.9);
     background-color: rgb(240, 240, 183);
@@ -51,4 +53,10 @@
 
 .linkedin-profile-link {
     text-decoration: none;
+}
+
+.skills-section > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
 }

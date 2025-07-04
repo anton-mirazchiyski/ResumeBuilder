@@ -3,15 +3,19 @@ const emailInputElement = document.querySelector('.email-input');
 const phoneInputElement = document.querySelector('.phone-number-input');
 const linkedinProfileInputElement = document.querySelector('.linkedin-profile-input');
 const summaryInputElement = document.querySelector('.summary-input');
+const educationInputElement = document.querySelector('.education-input');
+const skillsInputElement = document.querySelector('.skills-input');
 
 const livePreviewNameElement = document.querySelector('.live-preview-container .name');
 const livePreviewEmailElement = document.querySelector('.live-preview-container .email');
 const livePreviewPhoneElement = document.querySelector('.live-preview-container .phone');
 const livePreviewLinkedinElement = document.querySelector('a.linkedin-profile-link');
+let livePreviewPhoneNumberElement;
+
 const livePreviewSummaryElement = document.querySelector('.summary-section > p');
 const livePreviewSummaryHeadingElement = document.querySelector('.summary-section > h3');
-
-let livePreviewPhoneNumberElement;
+const livePreviewEducationElement = document.querySelector('.live-preview-container .education-section');
+const livePreviewSkillsElement = document.querySelector('.skills-section div');
 
 
 nameInputElement.addEventListener('input', (e) => {
@@ -54,4 +58,37 @@ summaryInputElement.addEventListener('focus', (e) => {
             livePreviewSummaryElement.textContent = '';
         }
     }, 1000);
+});
+
+educationInputElement.addEventListener('input', (e) => {
+    const content = e.target.value;
+    
+    // if (content[content.length - 1] == '\n') {
+    //     // const paragraphElement = document.createElement('p');
+    // }
+    
+});
+
+let timer;
+skillsInputElement.addEventListener('input', (e) => {
+    const content = e.target.value;
+    
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        const skills = content.split(', ');
+
+        Array.from(livePreviewSkillsElement.children).forEach(child => {
+            if (!skills.includes(child)) {
+                livePreviewSkillsElement.removeChild(child);
+            }
+        });
+
+        skills.forEach(skill => {
+            if (!livePreviewSkillsElement.textContent.includes(skill)) {
+                const spanElement = document.createElement('span');
+                spanElement.textContent = skill;
+                livePreviewSkillsElement.appendChild(spanElement);
+            }
+        });
+    }, 2000);
 });
