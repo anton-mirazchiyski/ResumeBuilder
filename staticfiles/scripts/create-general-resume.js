@@ -35,7 +35,7 @@ phoneInputElement.addEventListener('focus', (e) => {
 });
 
 phoneInputElement.addEventListener('input', (e) => {
-    livePreviewPhoneNumberElement.textContent = e.target.value; 
+    livePreviewPhoneNumberElement.textContent = e.target.value;
 });
 
 phoneInputElement.addEventListener('blur', (e) => {
@@ -46,7 +46,7 @@ phoneInputElement.addEventListener('blur', (e) => {
 
 linkedinProfileInputElement.addEventListener('input', (e) => {
     livePreviewLinkedinElement.setAttribute('href', e.target.value);
-    
+
     e.target.value ? livePreviewLinkedinElement.textContent = 'Linkedin' : livePreviewLinkedinElement.textContent = '';
 });
 
@@ -62,33 +62,34 @@ summaryInputElement.addEventListener('focus', (e) => {
 
 educationInputElement.addEventListener('input', (e) => {
     const content = e.target.value;
-    
-    // if (content[content.length - 1] == '\n') {
-    //     // const paragraphElement = document.createElement('p');
-    // }
-    
 });
+
 
 let timer;
+
 skillsInputElement.addEventListener('input', (e) => {
-    const content = e.target.value;
-    
     clearTimeout(timer);
     timer = setTimeout(() => {
-        const skills = content.split(', ');
-
-        Array.from(livePreviewSkillsElement.children).forEach(child => {
-            if (!skills.includes(child)) {
-                livePreviewSkillsElement.removeChild(child);
-            }
-        });
-
-        skills.forEach(skill => {
-            if (!livePreviewSkillsElement.textContent.includes(skill)) {
-                const spanElement = document.createElement('span');
-                spanElement.textContent = skill;
-                livePreviewSkillsElement.appendChild(spanElement);
-            }
-        });
+        addSkillsToLivePreview(e);
     }, 2000);
 });
+
+
+function addSkillsToLivePreview(e) {
+    const content = e.target.value;
+    const skills = content.split(', ');
+
+    Array.from(livePreviewSkillsElement.children).forEach(child => {
+        if (!skills.includes(child)) {
+            livePreviewSkillsElement.removeChild(child);
+        }
+    });
+
+    skills.forEach(skill => {
+        if (!livePreviewSkillsElement.textContent.includes(skill)) {
+            const spanElement = document.createElement('span');
+            spanElement.textContent = skill;
+            livePreviewSkillsElement.appendChild(spanElement);
+        }
+    });
+};
