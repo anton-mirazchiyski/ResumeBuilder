@@ -1,3 +1,4 @@
+import re
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -30,6 +31,10 @@ class BaseResume(models.Model):
 
     class Meta:
         abstract = True
+
+    def __str__(self):
+        resume_type = ' '.join(word.lower() for word in re.findall(r'[A-Z][a-z]+', self.__class__.__name__))
+        return f"{self.person_name}'s {resume_type}"
 
 
 class GeneralResume(BaseResume):
