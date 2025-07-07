@@ -14,7 +14,7 @@ let livePreviewPhoneNumberElement;
 
 const livePreviewSummaryElement = document.querySelector('.summary-section > p');
 const livePreviewSummaryHeadingElement = document.querySelector('.summary-section > h3');
-const livePreviewEducationElement = document.querySelector('.live-preview-container .education-section');
+const livePreviewEducationElement = document.querySelector('.live-preview-container .education-section > div');
 const livePreviewSkillsElement = document.querySelector('.skills-section div');
 
 
@@ -60,8 +60,9 @@ summaryInputElement.addEventListener('focus', (e) => {
     }, 1000);
 });
 
-educationInputElement.addEventListener('input', (e) => {
-    const content = e.target.value;
+educationInputElement.addEventListener('blur', (e) => {
+    livePreviewEducationElement.innerHTML = '';
+    addEducationContentToLivePreview(e);
 });
 
 
@@ -74,6 +75,28 @@ skillsInputElement.addEventListener('input', (e) => {
     }, 2000);
 });
 
+
+function addEducationContentToLivePreview(e) {
+    const content = e.target.value;
+    const rows = content.split('\n');
+
+    const paragraphs = [];
+
+    for (let i = 0; i < rows.length; i++) {
+        const rowNumber = i + 1;
+        const paragraphElement = document.createElement('p');
+        paragraphElement.textContent = rows[i];
+        paragraphs.push(paragraphElement);
+        
+        if (rowNumber % 3 == 0) {
+            const divElement = document.createElement('div');
+            divElement.classList.add('education-info');
+            paragraphs.forEach(paragraph => divElement.appendChild(paragraph));
+            livePreviewEducationElement.appendChild(divElement);
+            paragraphs.length = 0;
+        }
+    }
+}
 
 function addSkillsToLivePreview(e) {
     const content = e.target.value;
@@ -92,4 +115,4 @@ function addSkillsToLivePreview(e) {
             livePreviewSkillsElement.appendChild(spanElement);
         }
     });
-};
+}
