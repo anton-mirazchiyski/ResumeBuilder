@@ -38,13 +38,13 @@
     gap: 0.7rem;
 }
 
-.summary-section > h3, .education-section > h3,
-.skills-section > h3 {
+.live-preview-section-heading {
     text-decoration: underline;
     text-decoration-color: rgb(152, 159, 222, 0.9);
-    background-color: rgb(240, 240, 183);
+    background-color: rgb(246, 246, 207);
     max-width: 23%;
     padding: 0.2rem 0.4rem;
+    border-radius: 5px;
 }
 
 .live-preview-container .education-section > div {

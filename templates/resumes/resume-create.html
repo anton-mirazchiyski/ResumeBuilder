@@ -9,11 +9,6 @@
     <h1 class="general-resume-form-heading">Create a General Resume</h1>
     <div class="general-resume-container">
         <div class="general-resume-form-container">
-            <div class="general-resume-remove-options">
-                <button>Remove Summary</button>
-                <button>Remove Work Experience</button>
-                <button>Remove Skills</button>
-            </div>
             <form action="{% url "create resume" %}" method="post">
                 {% csrf_token %}
                 <div class="general-resume-form-contact-info">
@@ -36,24 +31,35 @@
                 </div>
                 <div class="general-resume-form-sections">
                     <section class="general-resume-summary">
-                        <div class="form-label">{{ form.summary.label_tag }}</div>
-                        {{ form.summary }}
+                        <button type="button">Remove<br>Summary</button>
+                        <div>
+                            <div class="form-label">{{ form.summary.label_tag }}</div>
+                            {{ form.summary }}
+                        </div>
                     </section>
                     <section class="general-resume-education">
-                        <div class="form-label">{{ form.education.label_tag }}</div>
-                        {{ form.education }}
+                        <div>
+                            <div class="form-label">{{ form.education.label_tag }}</div>
+                            {{ form.education }}
+                        </div>
                     </section>
                     <section class="general-resume-work-experience">
-                        <div class="form-label">{{ form.work_experience.label_tag }}</div>
-                        {{ form.work_experience }}
+                        <button type="button">Remove<br>Experience</button>
+                        <div>
+                            <div class="form-label">{{ form.work_experience.label_tag }}</div>
+                            {{ form.work_experience }}
+                        </div>
                     </section>
                     <section class="general-resume-skills">
-                        <div class="form-label">{{ form.skills.label_tag }}</div>
-                        {{ form.skills }}
+                        <button type="button">Remove<br>Skills</button>
+                        <div>
+                            <div class="form-label">{{ form.skills.label_tag }}</div>
+                            {{ form.skills }}
+                        </div>
                     </section>
                 </div>
                 <div class="general-resume-creation-btn-container">
-                    <button class="general-resume-creation-btn">Create Resume</button>
+                    <button type="submit" class="general-resume-creation-btn">Create Resume</button>
                 </div>
             </form>
         </div>
@@ -66,15 +72,15 @@
                     <a class="linkedin-profile-link" href="#"></a>
                 </section>
                 <section class="summary-section">
-                    <h3>Summary</h3>
+                    <h3 class="live-preview-section-heading">Summary</h3>
                     <p></p>
                 </section>
                 <section class="education-section">
-                    <h3>Education</h3>
+                    <h3 class="live-preview-section-heading">Education</h3>
                     <div></div>
                 </section>
                 <section class="skills-section">
-                    <h3>Skills</h3>
+                    <h3 class="live-preview-section-heading">Skills</h3>
                     <div></div>
                 </section>
             </section>

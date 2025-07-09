@@ -16,22 +16,8 @@
     flex-direction: column;
     align-items: start;
     margin-left: 3rem;
+    margin-top: 2rem;
     gap: 1rem;
-}
-
-.general-resume-remove-options {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.general-resume-remove-options > button {
-    padding: 0.3rem 1rem;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 5px;
-    color: rgb(22, 21, 21);
-    border: 2px solid gray;
-    background-color: rgb(246, 246, 207);
 }
 
 .general-resume-form-contact-info {
@@ -58,6 +44,30 @@
     border-radius: 7px;
 }
 
+.general-resume-form-sections > section {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    margin-right: 4rem;
+}
+
+.general-resume-education {
+    min-width: 39.638rem;
+    justify-content: end;
+}
+
+.general-resume-form-sections button {
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    width: 6.7rem;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid #000;
+    background-color: rgb(206, 202, 202);
+    color: #000;
+    font-weight: 600;
+}
+
 .general-resume-creation-btn-container {
     display: flex;
     justify-content: end;
@@ -71,7 +81,12 @@
     border: 3px solid #000;
     border-radius: 9px;
     background-color: #c4bdeb;
+    color: #0f0f0f;
     font-weight: 600;
+}
+
+.general-resume-form-sections button:hover {
+    background-color: rgb(161, 154, 154);
 }
 
 .general-resume-creation-btn:hover {
