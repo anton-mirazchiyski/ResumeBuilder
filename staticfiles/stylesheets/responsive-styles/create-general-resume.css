@@ -1,0 +1,51 @@
+@media (max-width: 640px) {
+    .general-resume-form-heading {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .general-resume-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        margin: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .general-resume-form-contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .general-resume-form-sections {
+        margin-bottom: 0;
+    }
+
+    .general-resume-form-sections > section {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .general-resume-creation-btn-container {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .general-resume-form-input {
+        line-height: 2.5rem;
+    }
+
+    .general-resume-larger-form-input {
+        max-width: 65vw;
+    }
+
+    .live-preview-container > section {
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+
+    .contact-info {
+        max-width: 80vw;
+    }
+}

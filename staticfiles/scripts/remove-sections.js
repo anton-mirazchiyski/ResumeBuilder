@@ -8,7 +8,7 @@ const previewSkillsSectionElement = document.querySelector('.live-preview-contai
 formSectionElements.forEach(sectionElement => {  
     const removeSectionButtonElement = sectionElement.getElementsByTagName('button')[0];
     if (!removeSectionButtonElement) {
-        return
+        return;
     }
     
     removeSectionButtonElement.addEventListener('click', () => {

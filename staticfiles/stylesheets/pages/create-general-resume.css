@@ -93,9 +93,3 @@
     background-color: rgb(152, 159, 222, 0.9);
     box-shadow: 1px 1px 3px 3px #000;
 }
-
-@media (max-width:640px) {
-    .general-resume-form-input {
-        max-width: 50vw;
-    }
-}
