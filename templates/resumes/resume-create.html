@@ -31,7 +31,7 @@
                 </div>
                 <div class="general-resume-form-sections">
                     <section class="general-resume-summary">
-                        <button type="button">Remove<br>Summary</button>
+                        <button class="remove-summary-btn" type="button">Remove<br>Summary</button>
                         <div>
                             <div class="form-label">{{ form.summary.label_tag }}</div>
                             {{ form.summary }}
@@ -83,8 +83,13 @@
                     <h3 class="live-preview-section-heading">Skills</h3>
                     <div></div>
                 </section>
+                <section class="experience-section">
+                    <h3 class="live-preview-section-heading">Work Experience</h3>
+                    <div></div>
+                </section>
             </section>
         </div>
     </div>
     <script src="{% static "scripts/create-general-resume.js" %}"></script>
+    <script src="{% static "scripts/remove-sections.js" %}"></script>
 {% endblock page_content %}
