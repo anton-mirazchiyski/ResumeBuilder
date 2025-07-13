@@ -46,7 +46,7 @@ class GeneralResumeForm(FormFieldAttributesMixin, forms.ModelForm):
             'phone_number': 'your phone number',
             'linkedin_profile': 'your linkedin profile link',
             'summary': 'A short summary or objective',
-            'education': 'List your education in the manner:\nDegree Name\nInstitution\nGraduation Date',
-            'skills': 'List your skills separated with commas\ne.g. Microsoft Office, Writing, Editing, Graphic Design'
+            'education': 'List your education in the manner:\n  Degree Name\n  Institution\n  Graduation Date',
+            'skills': 'List your skills separated with commas\n  e.g. Microsoft Office, Writing, Editing, Graphic Design'
         }
         self.set_placeholders(self.fields.items(), placeholders)

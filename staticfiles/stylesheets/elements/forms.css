@@ -5,12 +5,13 @@
 }
 
 .general-resume-form-input {
-    text-indent: 10px each-line;
+    text-indent: 10px;
     border: 2px solid gray;
     line-height: 2.2rem;
     border-radius: 6px;
     background-color: rgb(242, 242, 244);
     outline: none;
+    font-weight: 500;
 }
 
 .general-resume-larger-form-input {

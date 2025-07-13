@@ -56,16 +56,30 @@
     justify-content: end;
 }
 
-.general-resume-form-sections button {
+.general-resume-form-sections button,
+.general-resume-add-section-btns button {
     cursor: pointer;
     padding: 0.3rem 0.8rem;
-    width: 6.7rem;
+    width: 7rem;
     text-align: center;
     border-radius: 7px;
     border: 2px solid #000;
     background-color: rgb(206, 202, 202);
     color: #000;
     font-weight: 600;
+}
+
+.general-resume-add-section-btns {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.general-resume-add-section-btns button {
+    padding: 0.1rem 0.9rem;
+    background-color: rgb(235, 235, 163);
+    display: none;
 }
 
 .general-resume-creation-btn-container {
@@ -87,6 +101,10 @@
 
 .general-resume-form-sections button:hover {
     background-color: rgb(161, 154, 154);
+}
+
+.general-resume-add-section-btns button:hover {
+    background-color: rgb(221, 221, 94);
 }
 
 .general-resume-creation-btn:hover {
