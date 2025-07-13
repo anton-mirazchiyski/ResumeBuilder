@@ -32,7 +32,7 @@
     overflow: hidden;
 }
 
-.summary-section, .education-section, .skills-section {
+.summary-section, .education-section, .skills-section, .experience-section {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
@@ -42,7 +42,7 @@
     text-decoration: underline;
     text-decoration-color: rgb(152, 159, 222, 0.9);
     background-color: rgb(246, 246, 207);
-    max-width: 180px;
+    width: 180px;
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
 }

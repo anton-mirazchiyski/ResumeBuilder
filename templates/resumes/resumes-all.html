@@ -1,0 +1,16 @@
+{% extends "common/base.html" %}
+
+{% block title %}
+    Your current resumes
+{% endblock title %}
+
+{% block page_content %}
+    <div class="all-resumes-container">
+        {% for resume in resumes %}
+            <div class="single-resume-container">
+                <span><i class="bi bi-file-text-fill"></i></span>
+                <p class="resume-name">{{ resume.resume_name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock page_content %}

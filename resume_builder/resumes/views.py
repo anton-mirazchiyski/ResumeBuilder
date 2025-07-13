@@ -3,6 +3,7 @@ from django.views import generic as views
 
 from resume_builder.core.util_functions.resume_utils import set_name_for_a_resume
 from resume_builder.resumes.forms import GeneralResumeForm
+from resume_builder.resumes.models import GeneralResume
 
 
 def create_general_resume(request):
@@ -21,3 +22,13 @@ def create_general_resume(request):
     }
 
     return render(request, 'resumes/resume-create.html', context)
+
+
+def show_all_created_resumes(request):
+    created_resumes = GeneralResume.objects.all()
+
+    context = {
+        'resumes': created_resumes,
+    }
+
+    return render(request, 'resumes/resumes-all.html', context)
