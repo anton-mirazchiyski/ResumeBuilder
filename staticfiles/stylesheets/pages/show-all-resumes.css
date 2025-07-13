@@ -29,3 +29,31 @@
 .single-resume-container > .resume-name {
     font-weight: 600;
 }
+
+.single-resume-btn-links {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 0.6rem;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.single-resume-btn-links a {
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    background-color: rgb(246, 246, 207);
+    border: 2px solid #000;
+    border-radius: 6px;
+    min-width: 90px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.single-resume-btn-links a:hover {
+    background-color: rgb(213, 213, 128);
+    top: -7px;
+}

@@ -1,4 +1,5 @@
 {% extends "common/base.html" %}
+{% load static %}
 
 {% block title %}
     Your current resumes
@@ -10,7 +11,12 @@
             <div class="single-resume-container">
                 <span><i class="bi bi-file-text-fill"></i></span>
                 <p class="resume-name">{{ resume.resume_name }}</p>
+                <div class="single-resume-btn-links">
+                    <a href="#">View</a>
+                    <a href="#">Update</a>
+                </div>
             </div>
         {% endfor %}
     </div>
+    <script src="{% static "scripts/show-all-resumes.js" %}"></script>
 {% endblock page_content %}
