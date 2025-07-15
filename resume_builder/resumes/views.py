@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import generic as views
 
-from resume_builder.core.util_functions.resume_utils import set_name_for_a_resume
+from resume_builder.core.util_functions.resume_utils import process_education_section, set_name_for_a_resume
 from resume_builder.resumes.forms import GeneralResumeForm
 from resume_builder.resumes.models import GeneralResume
 
@@ -39,6 +39,7 @@ def show_resume(request, pk):
 
     context = {
         'resume': resume,
+        'education_paragraph_groups': process_education_section(resume.education),
         'skills': resume.skills.split(', ')
     }
 

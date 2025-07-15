@@ -18,7 +18,15 @@
     {% if resume.education %}
         <section class="education-section">
             <h3 class="live-preview-section-heading">Education</h3>
-            <div>{{ resume.education|linebreaksbr }}</div>
+            <div>
+                {% for paragraph_group in education_paragraph_groups %}
+                    <div class="education-info">
+                        {% for paragraph in paragraph_group %}
+                            <p>{{ paragraph }}</p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
         </section>
     {% endif %}
 

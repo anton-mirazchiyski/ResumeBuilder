@@ -26,3 +26,11 @@ def set_name_for_a_resume(resume):
         new_name = last_resume.resume_name + '1'
 
     resume.resume_name = new_name
+
+
+def process_education_section(education):
+    all_paragraphs = education.split('\n')
+
+    paragraph_groups = [[paragraph for paragraph in all_paragraphs[i:i + 3]] for i in range(0, len(all_paragraphs) - 1, 3)]
+
+    return paragraph_groups
