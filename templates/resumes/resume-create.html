@@ -69,30 +69,7 @@
             </form>
         </div>
         <div class="live-preview-container">
-            <section>
-                <p class="name"></p>
-                <section class="contact-info">
-                    <p class="email"></p>
-                    <p class="phone"></p>
-                    <a class="linkedin-profile-link" href="#"></a>
-                </section>
-                <section class="summary-section">
-                    <h3 class="live-preview-section-heading">Summary</h3>
-                    <p></p>
-                </section>
-                <section class="education-section">
-                    <h3 class="live-preview-section-heading">Education</h3>
-                    <div></div>
-                </section>
-                <section class="skills-section">
-                    <h3 class="live-preview-section-heading">Skills</h3>
-                    <div></div>
-                </section>
-                <section class="experience-section">
-                    <h3 class="live-preview-section-heading">Work Experience</h3>
-                    <div></div>
-                </section>
-            </section>
+            {% include "partials/live-preview-resume.html" %}
         </div>
     </div>
     <script src="{% static "scripts/create-general-resume.js" %}"></script>

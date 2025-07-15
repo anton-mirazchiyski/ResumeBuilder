@@ -1,0 +1,42 @@
+<section>
+    <p class="name">{{ resume.person_name }}</p>
+    <section class="contact-info">
+        <p class="email">{{ resume.email }}</p>
+        <p class="phone">Phone: {{ resume.phone_number }}</p>
+        {% if resume.linkedin_profile %}
+            <a class="linkedin-profile-link" href="{{ resume.linkedin_profile }}">Linkedin</a>
+        {% endif %}
+    </section>
+
+    {% if resume.summary %}
+        <section class="summary-section">
+            <h3 class="live-preview-section-heading">Summary</h3>
+            <p>{{ resume.summary }}</p>
+        </section>
+    {% endif %}
+
+    {% if resume.education %}
+        <section class="education-section">
+            <h3 class="live-preview-section-heading">Education</h3>
+            <div>{{ resume.education|linebreaksbr }}</div>
+        </section>
+    {% endif %}
+
+    {% if resume.skills %}
+        <section class="skills-section">
+            <h3 class="live-preview-section-heading">Skills</h3>
+            <div>
+                {% for skill in skills %}
+                    <span>{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+    
+    {% if resume.work_experience %}
+        <section class="experience-section">
+            <h3 class="live-preview-section-heading">Work Experience</h3>
+            <div>{{ resume.work_experience }}</div>
+        </section>
+    {% endif %}
+</section>

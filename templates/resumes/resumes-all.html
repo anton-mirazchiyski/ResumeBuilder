@@ -12,7 +12,7 @@
                 <span><i class="bi bi-file-text-fill"></i></span>
                 <p class="resume-name">{{ resume.resume_name }}</p>
                 <div class="single-resume-btn-links">
-                    <a href="#">View</a>
+                    <a href="{% url "show resume" resume.pk %}">View</a>
                     <a href="#">Update</a>
                 </div>
             </div>

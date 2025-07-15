@@ -32,3 +32,14 @@ def show_all_created_resumes(request):
     }
 
     return render(request, 'resumes/resumes-all.html', context)
+
+
+def show_resume(request, pk):
+    resume = GeneralResume.objects.filter(pk=pk).get()
+
+    context = {
+        'resume': resume,
+        'skills': resume.skills.split(', ')
+    }
+
+    return render(request, 'resumes/resume-view.html', context)
