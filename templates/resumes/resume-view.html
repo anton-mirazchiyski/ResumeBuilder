@@ -11,4 +11,7 @@
     <div class="resume-preview-container">
         {% include "partials/created-resume-preview.html" %}
     </div>
+    <div class="delete-btn-container">
+        <a class="delete-link-btn" href="{% url "delete resume" resume.pk %}">Delete</a>
+    </div>
 {% endblock page_content %}

@@ -44,3 +44,11 @@ def show_resume(request, pk):
     }
 
     return render(request, 'resumes/resume-view.html', context)
+
+
+def delete_resume(request, pk):
+    resume = GeneralResume.objects.filter(pk=pk).get()
+
+    resume.delete()
+
+    return redirect('show all resumes')

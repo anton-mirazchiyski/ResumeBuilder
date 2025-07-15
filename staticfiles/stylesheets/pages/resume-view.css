@@ -20,12 +20,12 @@
     background-color: #f9f9f9;
 }
 
-.pdf-download-btn-container {
+.pdf-download-btn-container, .delete-btn-container {
     display: flex;
     justify-content: end;
 }
 
-.pdf-download-link-btn {
+.pdf-download-link-btn, .delete-link-btn {
     text-decoration: none;
     margin: 3rem 6rem 0 0;
     border: 3px solid black;
@@ -34,8 +34,20 @@
     padding: 0.4rem 1rem;
     font-weight: 500;
     background-color: rgb(245, 245, 176);
+    width: 12.2rem;
 }
 
 .pdf-download-link-btn > i {
     margin-right: 0.5rem;
+}
+
+.delete-link-btn {
+    margin: 3rem 6rem 4rem 0;
+    background-color: rgb(241, 163, 163);
+    text-align: center;
+}
+
+.delete-link-btn:hover {
+    background-color: rgb(193, 50, 50);
+    color: #f4dfdf;
 }
