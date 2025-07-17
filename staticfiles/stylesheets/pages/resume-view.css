@@ -3,6 +3,8 @@
     justify-content: center;
     min-height: 80vh;
     align-items: center;
+    gap: 8.5rem;
+    margin: 5rem 0 0 22rem;
 }
 
 .resume-preview-container > section {
@@ -11,7 +13,6 @@
     gap: 2rem;
     border: 3px solid #000;
     border-radius: 5px;
-    margin: 3rem 0 5rem 0;
     width: 37.188rem;       /* 595px */
     min-height: 52.625rem;  /* 842px */
     padding: 1.5rem;
@@ -20,14 +21,13 @@
     background-color: #f9f9f9;
 }
 
-.pdf-download-btn-container, .delete-btn-container {
+.delete-btn-container {
     display: flex;
     justify-content: end;
 }
 
 .pdf-download-link-btn, .delete-link-btn {
     text-decoration: none;
-    margin: 3rem 6rem 0 0;
     border: 3px solid black;
     border-radius: 5px;
     color: #000;
@@ -35,6 +35,11 @@
     font-weight: 500;
     background-color: rgb(245, 245, 176);
     width: 12.2rem;
+}
+
+.pdf-download-link-btn {
+    align-self: flex-start;
+    margin-top: 0.5rem;
 }
 
 .pdf-download-link-btn > i {

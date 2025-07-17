@@ -13,7 +13,7 @@ def create_general_resume(request):
             resume = form.save(commit=False)
             set_name_for_a_resume(resume)
             resume.save()
-            return redirect('create resume')
+            return redirect('show resume', resume.pk)
     else:
         form = GeneralResumeForm()
 
@@ -48,7 +48,6 @@ def show_resume(request, pk):
 
 def delete_resume(request, pk):
     resume = GeneralResume.objects.filter(pk=pk).get()
-
     resume.delete()
 
     return redirect('show all resumes')
